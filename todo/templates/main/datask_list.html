@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <a href="{% url 'task_create' %}" >Create task</a>
+    <table>
+        <tr>
+            <th>
+                Item
+            </th>
+        </tr>
+        <tr>
+            <th>
+
+            </th>
+        </tr>
+
+        {% for task in taski %}
+        <tr>
+            <th>
+             <a href="{% url 'task' task.id %}">   {{ task.title }} </a>
+            </th>
+            <th><a href="{% url 'task_update' task.id %}">update</a> </th>
+            <th><a href="{% url 'task_delete' task.id %}">delete</a> </th>
+        </tr>
+            </th>
+
+        </tr>
+                        {% empty %}
+            <h3> no item in list</h3>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+
+</body>
+</html>
