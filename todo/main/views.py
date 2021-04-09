@@ -35,10 +35,4 @@ class TaskDelete(DeleteView):
     success_url = reverse_lazy('tasklist')
     template_name = 'main/delete.html'
 
-class TaskDel(DeleteView):
-    model = Datask
-    fields = '__all__'
-    context_object_name = 'taski'
-    success_url = reverse_lazy('tasklist')
-    template_name = 'main/delete.html'
 
