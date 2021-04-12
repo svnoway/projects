@@ -42,6 +42,11 @@ class Task(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['taski'] = context['taski'].filter(user=self.request.user)
         context['count'] = context['taski'].filter(complete=False).count()
+        search_input = self.request.GET.get('search-area') or ''
+        if search_input:
+            context['taski']= context['taski'].filter(
+                title__icontains=search_input)
+        context['search_input'] = search_input
         return context
 
 class TaskDetail(LoginRequiredMixin, DetailView):
