@@ -6,12 +6,20 @@
 </head>
 <body>
 <h1> ToDo</h1>
-
+<br>
+{% if request.user.is_authenticated %}
+<p> {{ request.user }}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <br>
+{% endif %}
+<br>
  <a href="{% url 'task_create' %}" >Create task</a>
     <table>
         <tr>
             <th>
-                Item2
+                Item
             </th>
         </tr>
         <tr>
