@@ -77,4 +77,3 @@ class TaskDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('tasklist')
     template_name = 'main/delete.html'
 
-

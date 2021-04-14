@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/main.html' %}
+
+{% block content %}
 <h1> ToDo</h1>
 <br>
 {% if request.user.is_authenticated %}
@@ -48,11 +44,8 @@
         {% endfor %}
     </table>
 
+{% endblock content%}
 
 
 
 
-
-
-</body>
-</html>
