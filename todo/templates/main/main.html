@@ -24,11 +24,11 @@
         <a class="nav-link" href="{% url 'tasklist' %}">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <a class="form-inline my-2 my-lg-0" method="get">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search-area" value="{{ search_input }}">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
         <a href="{% url 'login' %}"> <button type="button" class="btn btn-outline-primary">Login</button> </a>
-        <button type="button" class="btn btn-primary">Registration</button>
+        <a href="{% url 'register' %}" <button type="button" class="btn btn-primary">Registration</button> </a>
     </form>
 
   </div>

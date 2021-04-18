@@ -29,9 +29,26 @@
         </tr>
 
         {% for task in taski %}
-        <tr>
-            <th>
-             <a href="{% url 'task' task.id %}">   {{ task.title }} </a>
+
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+             <div class="toast-header">
+            <a href="{% url 'task' task.id %}">
+                <strong class="mr-auto"><p class="mb-0"> {{ task.title }}</p></strong>
+            </a>
+            <small>11 mins ago</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <a href="{% url 'task' task.id %}">
+                <div class="toast-body">
+                    {{ task.description }}
+                 </div>
+            </a>
+        </div>
+
+
+
             </th>
             <th><a href="{% url 'task_update' task.id %}">update</a> </th>
             <th><a href="{% url 'task_delete' task.id %}">delete</a> </th>
