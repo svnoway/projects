@@ -10,7 +10,7 @@
 </head>
 <link rel="stylesheet" href="{% static 'main.css' %}">
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="{% url 'tasklist' %}">To Do</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,11 +27,23 @@
         <a class="nav-link" href="{% url 'tasklist' %}">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+
+
+
+    {% if request.user.is_authenticated %}
+
+        <form class="form-inline my-2 my-lg-0">
       <input type="text" placeholder="Search" name="search-area" value="{{ search_input }}">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        <a href="{% url 'login' %}"> <button type="button" class="btn btn-outline-primary">Login</button> </a>
-        <a href="{% url 'register' %}"><button type="button" class="btn btn-primary">Registration</button> </a>
+<button   class="btn btn-primary">Hello, {{ request.user }}</button>
+
+    <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">LogOut</button> </a>
+    {% else %}
+    <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-primary">Login</button></a>
+    <br>
+{% endif %}
+
+
+
     </form>
 
   </div>

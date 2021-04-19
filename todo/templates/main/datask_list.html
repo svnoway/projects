@@ -3,32 +3,15 @@
     Task List
         {% endblock title %}
 {% block content %}
-<h1> ToDo</h1>
-<br>
-{% if request.user.is_authenticated %}
-<p> {{ request.user }}</p>
-    <a href="{% url 'logout' %}">Logout</a>
-    {% else %}
-    <a href="{% url 'login' %}">Login</a>
-    <br>
-{% endif %}
-<br>
- <a href="{% url 'task_create' %}" >Create task</a>
-<form method="get">
-    <input type="text" name="search-area" value="{{ search_input }}">
-    <input type="submit" value="Search">
-</form>
-    <table>
-        <tr>
-            <th>
-                Item
-            </th>
-        </tr>
-        <tr>
-            <th>
 
-            </th>
-        </tr>
+ <a href="{% url 'task_create' %}" >Create task</a>
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Primary card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
 
         {% for task in taski %}
 
@@ -39,7 +22,7 @@
             </a>
             <small> {{ task.created }}</small>
             <a href="{% url 'task_delete' task.id %}">
-                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                 <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" value="but">
              <span aria-hidden="true">&times;</span>
             </button>
                 </a>
@@ -57,7 +40,7 @@
                         {% empty %}
             <h3> no item in list</h3>
         {% endfor %}
-    </table>
+
 
 {% endblock content%}
 
