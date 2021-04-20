@@ -4846,7 +4846,12 @@ input[type="button"].btn-block {
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
-
+.container {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-rows: repeat(auto-fit, 175px);
+}
 .card-header-tabs {
   margin-right: -0.625rem;
   margin-bottom: -0.75rem;
@@ -8240,8 +8245,13 @@ button.bg-dark:focus {
 
 .ml-2,
 .mx-2 {
+position: absolute;
+right:15px;
+top: 15px;
+width: 15px;
+height: 15px;
+opacity: 0.3;
 
-  margin-left: 165px;
 }
 
 .m-3 {
