@@ -3,10 +3,16 @@
     Delete Task
         {% endblock title %}
 {% block content %}
+
     <form method="post" action="">
         {% csrf_token %}
-        <h1>You wont to delete: {{ taski }}</h1>
-        <input type="submit" value="Delete">
+    <blockquote class="blockquote text-center">
+        <p class="mb-0">You wont to delete:<cite title="Source Title"> {{ taski }}</cite></p>
+         <footer class="blockquote-footer">this action cannot be undone</footer>
+        <button type="submit" value="delete" class="btn btn-primary">Delete</button>
+    </blockquote>
+
+
     </form>
 
 

@@ -57,7 +57,7 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Datask
-    fields = ['title', 'description', 'complete']
+    fields = ['title' , 'description']
     template_name = 'main/create.html'
     success_url = reverse_lazy('tasklist')
 

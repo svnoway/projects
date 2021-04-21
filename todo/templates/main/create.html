@@ -7,6 +7,15 @@
     <form method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
-            <input type="submit" value="submit">
+<div class="form-group" >
+  <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
+  <input class="form-control form-control-lg" type="text" placeholder="Title" id="inputLarge">
+</div>
+           <div class="form-group">
+      <label for="exampleTextarea">Example textarea</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" value="submit">Submit</button>
     </form>
 {% endblock content %}
