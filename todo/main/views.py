@@ -66,6 +66,8 @@ class TaskCreate(LoginRequiredMixin, CreateView):
         return super(TaskCreate, self).form_valid(form)
 
 
+
+
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Datask
     fields = ['title', 'description', 'complete']
